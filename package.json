@@ -1,0 +1,175 @@
+{
+  "name": "comment-remover-pro-v3-by-nabildevs",
+  "displayName": "comment-remover-pro-v3-by-nabildevs",
+  "description": "Safely remove comments with backup, preview, undo, and smart string detection - Supports 50+ file types",
+  "version": "3.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nabil-devs/comment-remover-pro.git"
+  },
+  "publisher": "nabil-devs",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Formatters",
+    "Other",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onCommand:commentRemoverPro.removeAllComments",
+    "onCommand:commentRemoverPro.previewChanges",
+    "onCommand:commentRemoverPro.undoLastRemoval"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commentRemoverPro.removeAllComments",
+        "title": "Remove All Comments from Workspace"
+      },
+      {
+        "command": "commentRemoverPro.previewChanges",
+        "title": "Preview Comment Removal"
+      },
+      {
+        "command": "commentRemoverPro.undoLastRemoval",
+        "title": "Undo Last Comment Removal"
+      }
+    ],
+    "configuration": {
+      "title": "Comment Remover Pro",
+      "properties": {
+        "commentRemoverPro.backup.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Create backup before removing comments"
+        },
+        "commentRemoverPro.backup.location": {
+          "type": "string",
+          "default": "${workspaceFolder}/.comment-remover-backups",
+          "description": "Location to store backups"
+        },
+        "commentRemoverPro.fileExtensions": {
+          "type": "array",
+          "default": [
+            ".js", ".jsx", ".mjs", ".cjs",
+            ".ts", ".tsx", ".mts", ".cts",
+            ".py", ".pyw", ".pyi",
+            ".html", ".htm", ".xml", ".svg",
+            ".css", ".scss", ".sass", ".less",
+            ".java", ".kt", ".kts", ".scala",
+            ".c", ".h", ".cpp", ".cc", ".cxx", ".hpp", ".hh", ".hxx",
+            ".cs", ".m", ".mm", ".swift",
+            ".go", ".rs",
+            ".php", ".phtml", ".php3", ".php4", ".php5", ".php7", ".phps",
+            ".rb", ".rake", ".ru", ".gemspec",
+            ".sh", ".bash", ".zsh", ".fish", ".ps1", ".psm1", ".psd1",
+            ".sql",
+            ".yaml", ".yml", ".toml",
+            ".ini", ".cfg", ".conf", ".properties",
+            ".md", ".markdown",
+            ".vue", ".svelte",
+            ".dart",
+            ".lua",
+            ".pl", ".pm",
+            ".hs", ".lhs",
+            ".ex", ".exs",
+            ".jl",
+            ".r", ".R",
+            ".groovy", ".gradle",
+            ".json5",
+            ".hbs", ".handlebars",
+            ".adb", ".ads",
+            ".f", ".for", ".f90", ".f95", ".f03", ".f08",
+            ".v", ".vh", ".sv",
+            ".vhd", ".vhdl"
+          ],
+          "description": "File extensions to process (supports 50+ languages)"
+        },
+        "commentRemoverPro.remove.singleLine": {
+          "type": "boolean",
+          "default": true,
+          "description": "Remove single-line comments"
+        },
+        "commentRemoverPro.remove.multiLine": {
+          "type": "boolean",
+          "default": true,
+          "description": "Remove multi-line comments"
+        },
+        "commentRemoverPro.remove.shebang": {
+          "type": "boolean",
+          "default": false,
+          "description": "Remove shebang lines (#!/usr/bin/env)"
+        },
+        "commentRemoverPro.remove.todoComments": {
+          "type": "boolean",
+          "default": false,
+          "description": "Remove TODO/FIXME comments only"
+        },
+        "commentRemoverPro.excludePatterns": {
+          "type": "array",
+          "default": [
+            "**/node_modules/**",
+            "**/.git/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/out/**",
+            "**/*.min.*",
+            "**/*.bundle.*"
+          ],
+          "description": "Glob patterns to exclude"
+        }
+      }
+    },
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "commentRemoverPro.removeAllComments",
+          "group": "2_workspace",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "commentRemoverPro.previewChanges",
+          "group": "2_workspace",
+          "when": "explorerResourceIsFolder"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "commentRemoverPro.removeAllComments",
+          "group": "1_modification"
+        },
+        {
+          "command": "commentRemoverPro.previewChanges",
+          "group": "1_modification"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@types/vscode": "^1.60.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {},
+  "keywords": [
+    "comment",
+    "remover",
+    "clean",
+    "minify",
+    "formatter",
+    "cleanup",
+    "comments",
+    "remove",
+    "uncomment",
+    "strip"
+  ]
+}
