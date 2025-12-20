@@ -1,4 +1,4 @@
-
+# USE AT YOUR OWN RISK, MAJOR BUG PATCHES COMING JAN/6/2026
 
 <div align="left" style="position: relative;">
 <h1>COMMENT REMOVER PRO
