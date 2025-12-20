@@ -485,4 +485,4 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ---
 
 **Disclaimer**: Always back up your code before using automated tools. While Comment Remover Pro is designed to be safe, the developers are not responsible for any data loss. Use the preview feature first!
-                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                 
