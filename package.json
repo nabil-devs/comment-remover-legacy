@@ -1,8 +1,8 @@
 {
   "name": "comment-remover-pro-v3-by-nabildevs",
-  "displayName": "Comment Remover Pro",
+  "displayName": "Comment Remover Pro V3",
   "description": "Safely remove comments with backup, preview, undo, and smart string detection - Supports 50+ file types",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "icon": "images/icon.png",
   "repository": {
     "type": "git",
