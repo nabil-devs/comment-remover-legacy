@@ -1,8 +1,9 @@
 {
   "name": "comment-remover-pro-v3-by-nabildevs",
-  "displayName": "comment-remover-pro-v3-by-nabildevs",
+  "displayName": "Comment Remover Pro",
   "description": "Safely remove comments with backup, preview, undo, and smart string detection - Supports 50+ file types",
   "version": "3.0.0",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/nabil-devs/comment-remover-pro.git"
@@ -26,66 +27,65 @@
     "commands": [
       {
         "command": "commentRemoverPro.removeAllComments",
-        "title": "Remove All Comments from Workspace"
+        "title": "Remove All Comments from Workspace",
+        "icon": {
+          "light": "images/light/icon.svg",
+          "dark": "images/dark/icon.svg"
+        }
       },
       {
         "command": "commentRemoverPro.previewChanges",
-        "title": "Preview Comment Removal"
+        "title": "Preview Comment Removal",
+        "icon": {
+          "light": "images/light/preview.svg",
+          "dark": "images/dark/preview.svg"
+        }
       },
       {
         "command": "commentRemoverPro.undoLastRemoval",
-        "title": "Undo Last Comment Removal"
+        "title": "Undo Last Comment Removal",
+        "icon": {
+          "light": "images/light/undo.svg",
+          "dark": "images/dark/undo.svg"
+        }
       }
     ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "commentRemoverPro.removeAllComments",
+          "group": "1_modification"
+        },
+        {
+          "command": "commentRemoverPro.previewChanges",
+          "group": "1_modification"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "commentRemoverPro.removeAllComments",
+          "group": "2_workspace",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "commentRemoverPro.previewChanges",
+          "group": "2_workspace",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+    },
     "configuration": {
       "title": "Comment Remover Pro",
       "properties": {
         "commentRemoverPro.backup.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "Create backup before removing comments"
+          "description": "Create backup before removing comments (backups auto-delete after 1 hour)"
         },
         "commentRemoverPro.backup.location": {
           "type": "string",
           "default": "${workspaceFolder}/.comment-remover-backups",
           "description": "Location to store backups"
-        },
-        "commentRemoverPro.fileExtensions": {
-          "type": "array",
-          "default": [
-            ".js", ".jsx", ".mjs", ".cjs",
-            ".ts", ".tsx", ".mts", ".cts",
-            ".py", ".pyw", ".pyi",
-            ".html", ".htm", ".xml", ".svg",
-            ".css", ".scss", ".sass", ".less",
-            ".java", ".kt", ".kts", ".scala",
-            ".c", ".h", ".cpp", ".cc", ".cxx", ".hpp", ".hh", ".hxx",
-            ".cs", ".m", ".mm", ".swift",
-            ".go", ".rs",
-            ".php", ".phtml", ".php3", ".php4", ".php5", ".php7", ".phps",
-            ".rb", ".rake", ".ru", ".gemspec",
-            ".sh", ".bash", ".zsh", ".fish", ".ps1", ".psm1", ".psd1",
-            ".sql",
-            ".yaml", ".yml", ".toml",
-            ".ini", ".cfg", ".conf", ".properties",
-            ".md", ".markdown",
-            ".vue", ".svelte",
-            ".dart",
-            ".lua",
-            ".pl", ".pm",
-            ".hs", ".lhs",
-            ".ex", ".exs",
-            ".jl",
-            ".r", ".R",
-            ".groovy", ".gradle",
-            ".json5",
-            ".hbs", ".handlebars",
-            ".adb", ".ads",
-            ".f", ".for", ".f90", ".f95", ".f03", ".f08",
-            ".v", ".vh", ".sv",
-            ".vhd", ".vhdl"
-          ],
-          "description": "File extensions to process (supports 50+ languages)"
         },
         "commentRemoverPro.remove.singleLine": {
           "type": "boolean",
@@ -96,16 +96,6 @@
           "type": "boolean",
           "default": true,
           "description": "Remove multi-line comments"
-        },
-        "commentRemoverPro.remove.shebang": {
-          "type": "boolean",
-          "default": false,
-          "description": "Remove shebang lines (#!/usr/bin/env)"
-        },
-        "commentRemoverPro.remove.todoComments": {
-          "type": "boolean",
-          "default": false,
-          "description": "Remove TODO/FIXME comments only"
         },
         "commentRemoverPro.excludePatterns": {
           "type": "array",
@@ -121,45 +111,25 @@
           "description": "Glob patterns to exclude"
         }
       }
-    },
-    "menus": {
-      "explorer/context": [
-        {
-          "command": "commentRemoverPro.removeAllComments",
-          "group": "2_workspace",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "commentRemoverPro.previewChanges",
-          "group": "2_workspace",
-          "when": "explorerResourceIsFolder"
-        }
-      ],
-      "editor/context": [
-        {
-          "command": "commentRemoverPro.removeAllComments",
-          "group": "1_modification"
-        },
-        {
-          "command": "commentRemoverPro.previewChanges",
-          "group": "1_modification"
-        }
-      ]
     }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile",
+    "build": "npm run compile && vsce package",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "dev": "npm run compile && code --extensionDevelopmentPath=$PWD",
+    "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
+    "@types/node": "^18.0.0",
     "@types/vscode": "^1.60.0",
-    "typescript": "^4.5.5"
+    "typescript": "^4.9.0",
+    "vsce": "^2.15.0"
   },
-  "dependencies": {},
   "keywords": [
     "comment",
     "remover",
@@ -170,6 +140,8 @@
     "comments",
     "remove",
     "uncomment",
-    "strip"
+    "strip",
+    "safe",
+    "backup"
   ]
 }

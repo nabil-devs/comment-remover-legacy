@@ -1,15 +1,14 @@
-# USE AT YOUR OWN RISK, MAJOR BUG PATCHES COMING JAN/6/2026
 
 <div align="left" style="position: relative;">
 <h1>COMMENT REMOVER PRO
 <p align="left">
-	<em><code>🧹 Smart Comment Removal for 50+ Programming Languages</code></em>
+	<em><code> Smart Comment Removal for 50+ Programming Languages</code></em>
 </p>
 <p align="left">
-  <img src="https://img.shields.io/github/last-commit/nabil-devs/comment-remover-pro?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-  <img src="https://img.shields.io/github/languages/top/nabil-devs/comment-remover-pro?style=default&color=0080ff" alt="repo-top-language">
-  <img src="https://img.shields.io/github/languages/count/nabil-devs/comment-remover-pro?style=default&color=0080ff" alt="repo-language-count">
-  <img src="https://img.shields.io/badge/Supports-50%2B%20Languages-brightgreen" alt="languages-supported">
+ <img src="https://img.shields.io/github/last-commit/nabil-devs/comment-remover-pro?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+ <img src="https://img.shields.io/github/languages/top/nabil-devs/comment-remover-pro?style=default&color=0080ff" alt="repo-top-language">
+ <img src="https://img.shields.io/github/languages/count/nabil-devs/comment-remover-pro?style=default&color=0080ff" alt="repo-language-count">
+ <img src="https://img.shields.io/badge/Supports-50%2B%20Languages-brightgreen" alt="languages-supported">
 </p>
 <p align="left">
 </p>
@@ -23,36 +22,36 @@ https://marketplace.visualstudio.com/items?itemName=Nabil-Devs.comment-remover-p
 
 <details><summary>Table of Contents</summary>
 
-- [📍 Overview](#-overview)
-- [✨ Key Features](#-key-features)
-- [🌐 Supported Languages](#-supported-languages)
-- [📁 Project Structure](#-project-structure)
-  - [📂 Project Index](#-project-index)
-- [🚀 Getting Started](#-getting-started)
-  - [⚡ Quick Installation](#-quick-installation)
-  - [🔨 Building from Source](#-building-from-source)
-  - [🤖 Usage](#🤖-usage)
-  - [⚙️ Configuration](#️-configuration)
-- [🛡️ Safety Features](#️-safety-features)
-- [🎯 Use Cases](#-use-cases)
-- [📌 Project Roadmap](#-project-roadmap)
-- [🔰 Contributing](#-contributing)
-- [🎗 License](#-license)
-- [🙌 Acknowledgments](#-acknowledgments)
+- [ Overview](#-overview)
+- [ Key Features](#-key-features)
+- [ Supported Languages](#-supported-languages)
+- [ Project Structure](#-project-structure)
+ - [ Project Index](#-project-index)
+- [ Getting Started](#-getting-started)
+ - [ Quick Installation](#-quick-installation)
+ - [ Building from Source](#-building-from-source)
+ - [ Usage](#-usage)
+ - [ Configuration](#-configuration)
+- [ Safety Features](#-safety-features)
+- [ Use Cases](#-use-cases)
+- [ Project Roadmap](#-project-roadmap)
+- [ Contributing](#-contributing)
+- [ License](#-license)
+- [ Acknowledgments](#-acknowledgments)
 
 </details>
 <hr>
 
-## 📍 Overview
+## Overview
 
 **Comment Remover Pro** is a powerful VS Code extension that safely removes comments from your entire codebase while preserving comment-like text inside strings. Perfect for code minification, obfuscation, cleaning, and production preparation.
 
 **Why use Comment Remover Pro?**
-- 🛡️ **Safe**: Preserves URLs, regex patterns, and strings containing comment characters
-- 🌐 **Universal**: Supports 50+ programming languages
-- ⚡ **Fast**: Processes thousands of files in seconds
-- 🔄 **Reliable**: Includes backup, preview, and undo features
-- 🎯 **Smart**: Language-specific comment detection algorithms
+- **Safe**: Preserves URLs, regex patterns, and strings containing comment characters
+- **Universal**: Supports 50+ programming languages
+- **Fast**: Processes thousands of files in seconds
+- **Reliable**: Includes backup, preview, and undo features
+- **Smart**: Language-specific comment detection algorithms
 
 **Perfect for:**
 - Preparing code for production
@@ -63,33 +62,33 @@ https://marketplace.visualstudio.com/items?itemName=Nabil-Devs.comment-remover-p
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 🛡️ **Safe & Smart Removal**
+### **Safe & Smart Removal**
 - **String Detection**: Preserves `"//"`, `"#"`, `"/*"` inside strings and URLs
 - **Multi-line String Support**: Handles Python's `"""` and JavaScript's template literals
 - **Language-Specific Parsing**: Different algorithms for each programming language
 
-### 🔄 **Complete Workflow**
+### **Complete Workflow**
 - **Preview Mode**: See what will be removed before making changes
 - **Auto Backup**: Creates timestamped backups before modification
 - **One-Click Undo**: Restore from the most recent backup
 - **Progress Tracking**: Real-time progress with cancellation support
 
-### ⚙️ **Advanced Configuration**
+### **Advanced Configuration**
 - **File Type Filtering**: Choose which file extensions to process
 - **Comment Type Control**: Toggle single-line and multi-line comments separately
 - **Pattern Exclusion**: Exclude directories with glob patterns
 - **Shebang Handling**: Option to preserve or remove shebang lines
 
-### 📊 **Detailed Reporting**
+### **Detailed Reporting**
 - **Real-time Output**: Live processing log in VS Code output panel
 - **Statistics**: Files scanned, modified, and comments removed
 - **Size Reduction**: Calculate bytes saved from comment removal
 
 ---
 
-## 🌐 Supported Languages
+## Supported Languages
 
 **Web Development:**
 - JavaScript (.js, .jsx, .mjs, .cjs)
@@ -128,29 +127,29 @@ https://marketplace.visualstudio.com/items?itemName=Nabil-Devs.comment-remover-p
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```sh
 └── comment-remover-pro/
-    ├── .vscode/                  # VS Code configuration
-    │   ├── launch.json          # Debug configuration
-    │   ├── settings.json        # Editor settings
-    │   └── tasks.json           # Build tasks
-    ├── images/                  # Extension assets
-    │   └── icon.png            # Extension icon
-    ├── src/                     # TypeScript source
-    │   └── extension.ts        # Main extension code
-    ├── out/                     # Compiled JavaScript
-    │   ├── extension.js        # Compiled extension
-    │   └── extension.js.map    # Source maps
-    ├── .vscodeignore           # Files to exclude from package
-    ├── LICENSE                 # MIT License
-    ├── package.json           # Extension manifest
-    ├── tsconfig.json          # TypeScript configuration
-    └── README.md              # This file
+ ├── .vscode/ # VS Code configuration
+ │ ├── launch.json # Debug configuration
+ │ ├── settings.json # Editor settings
+ │ └── tasks.json # Build tasks
+ ├── images/ # Extension assets
+ │ └── icon.png # Extension icon
+ ├── src/ # TypeScript source
+ │ └── extension.ts # Main extension code
+ ├── out/ # Compiled JavaScript
+ │ ├── extension.js # Compiled extension
+ │ └── extension.js.map # Source maps
+ ├── .vscodeignore # Files to exclude from package
+ ├── LICENSE # MIT License
+ ├── package.json # Extension manifest
+ ├── tsconfig.json # TypeScript configuration
+ └── README.md # This file
 ```
 
-### 📂 Project Index
+### Project Index
 <details open>
 	<summary><b><code>COMMENT-REMOVER-PRO/</code></b></summary>
 	<details>
@@ -201,22 +200,22 @@ https://marketplace.visualstudio.com/items?itemName=Nabil-Devs.comment-remover-p
 </details>
 
 ---
-## 🚀 Getting Started
+## Getting Started
 
-### ⚡ Quick Installation
+### Quick Installation
 
 1. **From VS Code Marketplace:**
-   - Open VS Code
-   - Go to Extensions (Ctrl+Shift+X)
-   - Search for "Comment Remover Pro"
-   - Click Install
+ - Open VS Code
+ - Go to Extensions (Ctrl+Shift+X)
+ - Search for "Comment Remover Pro"
+ - Click Install
 
 2. **From VSIX file:**
-   - Download the latest `.vsix` file from releases
-   - In VS Code: Extensions → ⋮ → Install from VSIX...
-   - Select the downloaded file
+ - Download the latest `.vsix` file from releases
+ - In VS Code: Extensions → ⋮ → Install from VSIX...
+ - Select the downloaded file
 
-### 🔨 Building from Source
+### Building from Source
 
 **Prerequisites:**
 - Node.js (v14 or higher)
@@ -235,33 +234,33 @@ cd comment-remover-pro
 npm install
 
 # 3. Compile TypeScript
-npm run compile
+npm run build
 
 # 4. Package the extension
 npx @vscode/vsce package
 
 # 5. Install the generated .vsix file in VS Code
-#    - Open Extensions view
-#    - Click "..." → "Install from VSIX..."
-#    - Select comment-remover-pro-X.X.X.vsix
+# - Open Extensions view
+# - Click "..." → "Install from VSIX..."
+# - Select comment-remover-pro-X.X.X.vsix
 ```
 
-### 🤖 Usage
+### Usage
 
 **Three Ways to Use:**
 
 1. **Command Palette (Recommended):**
-   - Press `Ctrl+Shift+P`
-   - Type "Remove All Comments from Workspace"
-   - Press Enter
+ - Press `Ctrl+Shift+P`
+ - Type "Remove All Comments from Workspace"
+ - Press Enter
 
 2. **Explorer Context Menu:**
-   - Right-click any folder in Explorer
-   - Select "Remove All Comments from Workspace"
+ - Right-click any folder in Explorer
+ - Select "Remove All Comments from Workspace"
 
 3. **Keyboard Shortcut:**
-   - `Ctrl+Shift+/` (Windows/Linux)
-   - `Cmd+Shift+/` (Mac)
+ - `Ctrl+Shift+/` (Windows/Linux)
+ - `Cmd+Shift+/` (Mac)
 
 **Workflow:**
 ```
@@ -270,21 +269,21 @@ npx @vscode/vsce package
 3. Undo → Restore from backup if needed
 ```
 
-### ⚙️ Configuration
+### Configuration
 
 Customize the extension in VS Code Settings (Ctrl+,):
 
 ```json
 {
-  "commentRemoverPro.backup.enabled": true,
-  "commentRemoverPro.fileExtensions": [".js", ".ts", ".py", ".html"],
-  "commentRemoverPro.remove.singleLine": true,
-  "commentRemoverPro.remove.multiLine": true,
-  "commentRemoverPro.excludePatterns": [
-    "**/node_modules/**",
-    "**/.git/**",
-    "**/dist/**"
-  ]
+ "commentRemoverPro.backup.enabled": true,
+ "commentRemoverPro.fileExtensions": [".js", ".ts", ".py", ".html"],
+ "commentRemoverPro.remove.singleLine": true,
+ "commentRemoverPro.remove.multiLine": true,
+ "commentRemoverPro.excludePatterns": [
+ "**/node_modules/**",
+ "**/.git/**",
+ "**/dist/**"
+ ]
 }
 ```
 
@@ -299,26 +298,26 @@ Customize the extension in VS Code Settings (Ctrl+,):
 
 ---
 
-## 🛡️ Safety Features
+## Safety Features
 
-### 🔐 **Backup System**
+### **Backup System**
 - Automatic timestamped backups
 - Configurable backup location
 - Backup metadata storage
 - Automatic cleanup of old backups
 
-### 👁️ **Preview Mode**
+### **Preview Mode**
 - Shows exactly what will be removed
 - No changes made to files
 - Statistics about potential modifications
 - Option to apply or cancel
 
-### ↩️ **Undo Functionality**
+### ↩ **Undo Functionality**
 - One-click restore from most recent backup
 - Backup history tracking
 - Safe rollback mechanism
 
-### 🚨 **Safety Checks**
+### **Safety Checks**
 - Modal confirmation before destructive operations
 - Cancellable operations at any time
 - Error handling with detailed logging
@@ -326,7 +325,7 @@ Customize the extension in VS Code Settings (Ctrl+,):
 
 ---
 
-## 🎯 Use Cases
+## Use Cases
 
 ### **1. Production Code Preparation**
 ```javascript
@@ -360,9 +359,9 @@ Remove outdated comments from:
 
 ---
 
-## 📌 Project Roadmap
+## Project Roadmap
 
-### ✅ **Completed**
+### **Completed**
 - [X] **Core Comment Removal**: Basic comment removal for major languages
 - [X] **String Preservation**: Smart detection of comment-like text in strings
 - [X] **Preview Mode**: Safe preview without file modification
@@ -370,12 +369,12 @@ Remove outdated comments from:
 - [X] **Multi-language Support**: 50+ programming languages
 - [X] **VS Code Integration**: Commands, menus, and configuration
 
-### 🚧 **In Progress**
+### **In Progress**
 - [ ] **Advanced Pattern Matching**: Regex-based custom comment patterns
 - [ ] **Language-specific Settings**: Per-language configuration
 - [ ] **Batch Size Optimization**: Improved performance for large projects
 
-### 📋 **Planned**
+### **Planned**
 - [ ] **Cloud Backup Integration**: Backup to cloud storage services
 - [ ] **Team Collaboration**: Shared settings and templates
 - [ ] **AI-Powered Analysis**: Smart comment categorization
@@ -384,7 +383,7 @@ Remove outdated comments from:
 
 ---
 
-## 🔰 Contributing
+## Contributing
 
 We welcome contributions! Here's how you can help:
 
@@ -428,28 +427,28 @@ npm run watch
 <summary>Contributor Graph</summary>
 <br>
 <p align="left">
-   <a href="https://github.com/nabil-devs/comment-remover-pro/graphs/contributors">
-      <img src="https://contrib.rocks/image?repo=nabil-devs/comment-remover-pro">
-   </a>
+ <a href="https://github.com/nabil-devs/comment-remover-pro/graphs/contributors">
+ <img src="https://contrib.rocks/image?repo=nabil-devs/comment-remover-pro">
+ </a>
 </p>
 </details>
 
 ---
 
-## 🎗 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 **Permissions:**
-- ✅ Commercial use
-- ✅ Modification
-- ✅ Distribution
-- ✅ Private use
-- ✅ Sublicensing
+- Commercial use
+- Modification
+- Distribution
+- Private use
+- Sublicensing
 
 **Limitations:**
-- ❌ Liability
-- ❌ Warranty
+- Liability
+- Warranty
 
 **Conditions:**
 - © Include original copyright notice
@@ -457,7 +456,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 🙌 Acknowledgments
+## Acknowledgments
 
 ### **Built With**
 - [Visual Studio Code](https://code.visualstudio.com/) - The best code editor
@@ -478,11 +477,10 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ---
 
 <div align="center">
-<sub>Built with ❤️ by the open-source community</sub><br>
+<sub>Built with by the open-source community</sub><br>
 <sub>If this extension helps you, consider giving it a ⭐ on GitHub!</sub>
 </div>
 
 ---
 
 **Disclaimer**: Always back up your code before using automated tools. While Comment Remover Pro is designed to be safe, the developers are not responsible for any data loss. Use the preview feature first!
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
