@@ -1,0 +1,147 @@
+{
+ "name": "comment-remover-pro-v3-by-nabildevs",
+ "displayName": "Comment Remover Pro V3",
+ "description": "Safely remove comments with backup, preview, undo, and smart string detection - Supports 50+ file types",
+ "version": "4.0.0",
+ "icon": "images/icon.png",
+ "repository": {
+ "type": "git",
+ "url": "https://github.com/nabil-devs/comment-remover-pro.git"
+ },
+ "publisher": "nabil-devs",
+ "engines": {
+ "vscode": "^1.60.0"
+ },
+ "categories": [
+ "Formatters",
+ "Other",
+ "Programming Languages"
+ ],
+ "activationEvents": [
+ "onCommand:commentRemoverPro.removeAllComments",
+ "onCommand:commentRemoverPro.previewChanges",
+ "onCommand:commentRemoverPro.undoLastRemoval"
+ ],
+ "main": "./out/extension.js",
+ "contributes": {
+ "commands": [
+ {
+ "command": "commentRemoverPro.removeAllComments",
+ "title": "Remove All Comments from Workspace",
+ "icon": {
+ "light": "images/light/icon.svg",
+ "dark": "images/dark/icon.svg"
+ }
+ },
+ {
+ "command": "commentRemoverPro.previewChanges",
+ "title": "Preview Comment Removal",
+ "icon": {
+ "light": "images/light/preview.svg",
+ "dark": "images/dark/preview.svg"
+ }
+ },
+ {
+ "command": "commentRemoverPro.undoLastRemoval",
+ "title": "Undo Last Comment Removal",
+ "icon": {
+ "light": "images/light/undo.svg",
+ "dark": "images/dark/undo.svg"
+ }
+ }
+ ],
+ "menus": {
+ "editor/context": [
+ {
+ "command": "commentRemoverPro.removeAllComments",
+ "group": "1_modification"
+ },
+ {
+ "command": "commentRemoverPro.previewChanges",
+ "group": "1_modification"
+ }
+ ],
+ "explorer/context": [
+ {
+ "command": "commentRemoverPro.removeAllComments",
+ "group": "2_workspace",
+ "when": "explorerResourceIsFolder"
+ },
+ {
+ "command": "commentRemoverPro.previewChanges",
+ "group": "2_workspace",
+ "when": "explorerResourceIsFolder"
+ }
+ ]
+ },
+ "configuration": {
+ "title": "Comment Remover Pro",
+ "properties": {
+ "commentRemoverPro.backup.enabled": {
+ "type": "boolean",
+ "default": true,
+ "description": "Create backup before removing comments (backups auto-delete after 1 hour)"
+ },
+ "commentRemoverPro.backup.location": {
+ "type": "string",
+ "default": "${workspaceFolder}/.comment-remover-backups",
+ "description": "Location to store backups"
+ },
+ "commentRemoverPro.remove.singleLine": {
+ "type": "boolean",
+ "default": true,
+ "description": "Remove single-line comments"
+ },
+ "commentRemoverPro.remove.multiLine": {
+ "type": "boolean",
+ "default": true,
+ "description": "Remove multi-line comments"
+ },
+ "commentRemoverPro.excludePatterns": {
+ "type": "array",
+ "default": [
+ "**/node_modules/**",
+ "**/.git/**",
+ "**/dist/**",
+ "**/build/**",
+ "**/out/**",
+ "**/*.min.*",
+ "**/*.bundle.*"
+ ],
+ "description": "Glob patterns to exclude"
+ }
+ }
+ }
+ },
+ "scripts": {
+ "vscode:prepublish": "npm run compile",
+ "compile": "tsc -p ./",
+ "watch": "tsc -watch -p ./",
+ "build": "npm run compile && vsce package",
+ "package": "vsce package",
+ "publish": "vsce publish",
+ "dev": "npm run compile && code --extensionDevelopmentPath=$PWD",
+ "lint": "eslint src --ext ts",
+ "test": "node ./out/test/runTest.js"
+ },
+ "devDependencies": {
+ "@types/node": "^18.0.0",
+ "@types/vscode": "^1.60.0",
+ "typescript": "^4.9.0",
+ "vsce": "^2.15.0"
+ },
+ "keywords": [
+ "comment",
+ "remover",
+ "clean",
+ "minify",
+ "formatter",
+ "cleanup",
+ "comments",
+ "remove",
+ "uncomment",
+ "strip",
+ "safe",
+ "backup"
+ ]
+}
